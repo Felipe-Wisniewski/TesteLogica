@@ -22,6 +22,7 @@ public class TesteSequencia {
 		
 		Palavra p = new Palavra(palavra);
 		
+		//Chama o método sequenciaCaracteres e imprime o resultado retornado
 		System.out.println(sequenciaCaracteres(p));		
 
 	}
@@ -37,13 +38,16 @@ public class TesteSequencia {
 		
 		for(int i = 0; i < pa.tamanhoPalavra(); i++) {
 			
+			//recebe o primeiro caractér
 			aux = Character.toString(pa.letraPalavra(i));
 			
+			//alimenta a sequência de caracteres repetidos
 			while(pa.letraPalavra(i) == pa.letraPalavra(i+1)) {				
 				aux += pa.letraPalavra(i+1);
 				i++;				
 			}
 			
+			//substitue a sequência menor pela maior
 			if(aux.length() > sequencia.length()) {
 				sequencia = aux;
 			}			

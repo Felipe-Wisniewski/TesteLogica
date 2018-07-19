@@ -58,31 +58,34 @@ public class TesteSoma {
 	 */
 		
 		ArrayList<String> sub = new ArrayList<>();
-		int maxTotal, maxAtual, idx, idxI, idxF;
+		int maxTotal, maxAtual, indX, indI, indF;
 		maxAtual = 0;
 		maxTotal = -1;
-		idx = 0;
-		idxI = 0;
-		idxF = 0;	
+		indX = 0;
+		indI = 0;
+		indF = 0;	
 		
 		for(int i = 0; i < s.size(); i++) {
 			maxAtual = maxAtual + s.get(i);
 			
+			//Se o resultado da soma for menor que a posição atual, atualiza o índice do subconjunto
 			if(s.get(i) > maxAtual) {
 				maxAtual = s.get(i);
-				idx = i;			
+				indX = i;			
 			}				
-						
+			
+			//Atualiza a soma total e seus índices no array
 			if(maxAtual > maxTotal) {
 				maxTotal = maxAtual;
-				idxI = idx;
-				idxF = i;
+				indI = indX;
+				indF = i;
 			}
 			sub.add(s.get(i).toString());
 		}		
 		
-		sub.set(idxI, "**" + s.get(idxI).toString());
-		sub.set(idxF, s.get(idxF).toString() + "**");
+		//Edita a posição inicial e final do subconjunto dentro do array
+		sub.set(indI, "**" + s.get(indI).toString());
+		sub.set(indF, s.get(indF).toString() + "**");
 		
 		return sub;
 	}
