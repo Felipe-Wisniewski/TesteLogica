@@ -17,13 +17,19 @@ public class Palavra {
 	public int tamanhoPalavra() { return this.palavra.length();	}
 	
 	public char letraPalavra(int i) {
-		/**Método que retorna o carácter que se encontra no índice desejado.
-		 * @param i - inteiro referente ao index.
-		 * @return c - char da posição requerida.  
-		 */
+	/**Método que retorna o carácter que se encontra no índice desejado.
+	 * @param i - inteiro referente ao index.
+	 * @return c - char da posição requerida.  
+	 */
+		
 		if(i == tamanhoPalavra()) {
-			return '*';
+			if(this.palavra.charAt(i) == '*') {
+				return '#';
+			}else {
+				return '*';		
+			}
 		}
+		
 		char c = this.palavra.charAt(i);
 		return c;
 	}
